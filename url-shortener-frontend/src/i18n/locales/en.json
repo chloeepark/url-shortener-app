@@ -1,0 +1,21 @@
+{
+  "title": "URL Shortener",
+  "subtitle": "Transform your long URLs into clean, shareable links",
+  "placeholder": "Paste your long URL here...",
+  "shortenButton": "Shorten",
+  "shortening": "Processing... (up to 30s)",
+  "result": "Your shortened URL",
+  "copyButton": "Copy",
+  "copied": "Copied!",
+  "error": {
+    "enterUrl": "Please enter a URL!",
+    "failedToShorten": "Failed to shorten URL"
+  },
+  "language": "Language",
+  "features": {
+    "free": "Free",
+    "noSignup": "No signup",
+    "fast": "Fast",
+    "secure": "Secure"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "URL 단축기",
+  "subtitle": "긴 URL을 깔끔하고 공유하기 쉬운 링크로 변환하세요",
+  "placeholder": "긴 URL을 입력하세요...",
+  "shortenButton": "단축하기",
+  "shortening": "처리 중... (최대 30초 소요)",
+  "result": "단축된 URL",
+  "copyButton": "복사",
+  "copied": "복사됨!",
+  "error": {
+    "enterUrl": "URL을 입력해주세요!",
+    "failedToShorten": "URL 단축에 실패했습니다"
+  },
+  "language": "언어",
+  "features": {
+    "free": "무료",
+    "noSignup": "가입 불필요",
+    "fast": "빠름",
+    "secure": "안전함"
+  }
+}
