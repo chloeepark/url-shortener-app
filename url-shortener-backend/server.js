@@ -19,7 +19,10 @@ const analytics = new Map(); // 클릭 수 추적
 // 미들웨어 설정
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://your-frontend-domain.com'],
+  origin: [
+    'http://localhost:5173', 
+    'https://zplink.netlify.app',
+  ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
