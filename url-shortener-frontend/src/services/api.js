@@ -11,7 +11,7 @@ console.log('🔗 API Base URL:', API_BASE_URL);
 // Axios 인스턴스 생성 (타임아웃 설정)
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 30000, // 30초 타임아웃
+  timeout: 120000, // 2분 타임아웃 (Render Cold Start 대응)
   headers: {
     'Content-Type': 'application/json',
   },
@@ -30,11 +30,15 @@ export const shortenUrl = async (originalUrl) => {
     console.error('❌ URL 단축 실패:', error);
     
     if (error.code === 'ECONNABORTED') {
-      throw { message: '서버 응답이 너무 느립니다. 잠시 후 다시 시도해주세요.' };
+      throw { message: '서버가 시작 중입니다. 잠시 후 다시 시도해주세요. (최대 2분 소요)' };
     }
     
     if (error.response?.status === 400) {
       throw { message: '잘못된 URL 형식입니다. 올바른 URL을 입력해주세요.' };
+    }
+    
+    if (error.response?.status === 502 || error.response?.status === 503) {
+      throw { message: '서버가 시작 중입니다. 1-2분 후 다시 시도해주세요.' };
     }
     
     throw { message: error.response?.data?.message || '서버에 문제가 발생했습니다. 잠시 후 다시 시도해주세요.' };

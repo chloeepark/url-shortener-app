@@ -3,7 +3,7 @@
   "subtitle": "Transform your long URLs into clean, shareable links",
   "placeholder": "Paste your long URL here...",
   "shortenButton": "Shorten",
-  "shortening": "Processing... (up to 30s)",
+  "shortening": "Processing... (up to 2 minutes if server is starting)",
   "result": "Your shortened URL",
   "copyButton": "Copy",
   "copied": "Copied!",
