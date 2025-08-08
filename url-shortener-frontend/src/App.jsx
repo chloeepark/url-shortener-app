@@ -179,7 +179,7 @@ function App() {
         </div>
         
         <div className="footer">
-          <p>© 2025 URL Shortener. Built with ❤️ using React & Vite</p>
+          <p>© 2025 ZPLink. Built with ❤️ using React & Vite</p>
         </div>
       </div>
     </div>
