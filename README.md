@@ -1,4 +1,4 @@
-# URL Shortener - Full Stack Application
+# ZPLink - Full Stack Application
 
 A modern, full-stack URL shortening service with **7-character nanoid-based short codes**. Built with React frontend and Node.js backend.
 
@@ -123,4 +123,4 @@ MIT License - feel free to use this project for personal or commercial purposes.
 
 ---
 
-**© 2025 URL Shortener. All rights reserved.**
+**© 2025 ZPLink. All rights reserved.**
