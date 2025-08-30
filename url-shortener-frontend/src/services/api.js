@@ -3,7 +3,7 @@ import axios from 'axios';
 // 환경 변수에서 API URL 가져오기 (fallback 포함)
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
   (import.meta.env.PROD 
-    ? 'https://urlatch.netlify.app/' // 기본 배포 URL
+    ? 'https://url-shortener-app-q188.onrender.com' // 백엔드 서버 URL
     : 'http://localhost:3000'); // 기본 개발 URL
 
 console.log('🔗 API Base URL:', API_BASE_URL);
