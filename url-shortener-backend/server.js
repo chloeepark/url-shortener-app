@@ -27,7 +27,8 @@ app.use(cors({
     'https://zplink.netlify.app',
   ],
   methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -177,7 +178,8 @@ app.get('/:shortId', (req, res) => {
     // shortId 유효성 검사
     if (!shortId || shortId.length < 6 || shortId.length > 10) {
       return res.status(400).json({
-        error: 'Invalid short ID format'
+        error: 'Invalid short ID format',
+        message: '잘못된 단축 URL 형식입니다.'
       });
     }
 
@@ -207,7 +209,8 @@ app.get('/:shortId', (req, res) => {
     console.log(`🔗 Redirecting: ${shortId} → ${urlData.originalUrl} (${urlData.clicks} clicks)`);
 
     // 원본 URL로 리다이렉션
-    res.redirect(301, urlData.originalUrl);
+    console.log(`🔄 Redirecting to: ${urlData.originalUrl}`);
+    return res.redirect(302, urlData.originalUrl);
 
   } catch (error) {
     console.error('Error redirecting:', error);
