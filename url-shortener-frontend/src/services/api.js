@@ -23,8 +23,8 @@ export const shortenUrl = async (originalUrl) => {
     const response = await apiClient.post('/shorten', { originalUrl });
     
     return {
-      shortUrl: response.data.shortUrl,
-      displayUrl: response.data.shortId || response.data.shortUrl.split('/').pop()
+      shortUrl: `https://url-shortener-app-q188.onrender.com/${response.data.shortId}`,
+      displayUrl: response.data.shortId // 단축 코드만 표시
     };
   } catch (error) {
     console.error('❌ URL 단축 실패:', error);
