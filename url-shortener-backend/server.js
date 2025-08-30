@@ -10,7 +10,10 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const BASE_URL = process.env.BASE_URL || 
+  (process.env.NODE_ENV === 'production' 
+    ? 'https://zplink.netlify.app'
+    : `http://localhost:${PORT}`);
 
 // 메모리 저장소 (실제 운영에서는 데이터베이스 사용)
 const urlDatabase = new Map();
