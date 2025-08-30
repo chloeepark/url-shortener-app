@@ -19,3 +19,16 @@
   base = "url-shortener-frontend"
   command = "npm run build"
   publish = "dist"
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Short URL redirects
+[[redirects]]
+  from = "/:shortId"
+  to = "https://url-shortener-app-q188.onrender.com/:shortId"
+  status = 302
+  force = true
