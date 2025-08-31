@@ -52,7 +52,8 @@ function App() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(shortUrl.shortUrl);
+      // 단축 코드만 복사
+      await navigator.clipboard.writeText(shortUrl.displayUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
